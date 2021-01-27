@@ -1,23 +1,24 @@
 import { individualFacility } from './Facility.js'
 import { getFacilities, useFacilities } from './facilityProvider.js'
 
-let facilityContainer = document.querySelector('.facility-list')
+let facilityContainer = document.querySelector('#the-box')
 
 export const facilitiesList = () => {
     getFacilities().then(() => {
     
         let facilities = useFacilities();
         let facilityStringContainer = ''
-
-        document.getElementById("facility-head").innerHTML = 'Facilities';
         
         for (const facility of facilities) {
             facilityStringContainer += individualFacility(facility)
         }
-        facilityContainer.innerHTML = facilityStringContainer
+        facilityContainer.innerHTML = `
+        <h2>Facilities</h2>
+        <div class="flex-container">${facilityStringContainer}</div>`
     })
 }
 
 document.querySelector("#facilities-nav-link").addEventListener("click", () => {
     facilitiesList()
 })
+

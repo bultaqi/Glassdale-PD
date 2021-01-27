@@ -4,6 +4,10 @@
     justify-content: space-evenly;
 }
 
+h2 {
+    text-align: center;
+}
+
 .criminal-card, .officer-card, .facility-card {
     border: 1px dotted;
     padding: 1em;
@@ -11,14 +15,6 @@
     line-height: 1em;
     font-weight: bold;
     width: 14em;
-}
-
-#criminal-head, #officer-head, #facility-head {
-    text-align: center;
-}
-
-.criminals h2 {
-    text-align: center;
 }
 
 .dark-background {

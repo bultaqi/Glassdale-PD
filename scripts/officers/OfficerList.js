@@ -1,20 +1,20 @@
 import { individualOfficer } from './Officer.js'
 import { getOfficers, useOfficers } from './OfficerProvider.js'
 
-let officerContainer = document.querySelector('.officer-list')
+let officerContainer = document.querySelector('#the-box')
 
 export const officerList = () => {
     getOfficers().then(() => {
     
         let officers = useOfficers();
         let officerStringContainer = ''
-        
-        document.getElementById("officer-head").innerHTML = 'Officers';
 
         for (const officer of officers) {
             officerStringContainer += individualOfficer(officer)
         }
-        officerContainer.innerHTML = officerStringContainer
+        officerContainer.innerHTML = `
+        <h2>Officers</h2>
+        <div class="flex-container">${officerStringContainer}</div>`
     })
 }
 
