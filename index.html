@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="styles/main.css">
     <title>Glassdale PD</title>
 </head>
+
 <body>
 
     <nav>
@@ -25,11 +26,18 @@
         </ul>
       </nav>
 
-    <button id="dark-mode">Dark Mode</button>
-    <button type="button" id="witness-statements">Witness Statements</button>
+  <main>
+      <section class="main-container">
+        <button id="dark-mode">Dark Mode</button>
+        <button type="button" id="witness-statements">Witness Statements</button>
 
-    <section id="the-box"></section>
+        <div id='filters__crime'></div>
 
-    <script type="module" src="scripts/main.js"></script>
+        <section id="the-box"></section>
+      </section>
+  </main>
+
+  <script type="module" src="scripts/main.js"></script>
 </body>
+
 </html>

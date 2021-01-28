@@ -9,7 +9,6 @@ export const getWitnessStatements = () => {
     return fetch('https://criminals.glassdale.us/witnesses')
         .then(r => r.json())
         .then(statementsOfWitnesses => {
-            console.log(statementsOfWitnesses)
             witnessStatements = statementsOfWitnesses
         }
     )      

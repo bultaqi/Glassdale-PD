@@ -3,7 +3,7 @@ import { individualCriminal } from './Criminal.js';
 import { getCriminals, useCriminals } from './CriminalProvider.js'
 
 // Creating a storage container to catch the function results and targert my html.
-let criminalContainer = document.querySelector('#the-box')
+// let criminalContainer = document.querySelector('#the-box')
 
 // This function is taking the imported data and processing it for the final product to be placed in the html.
 export const criminalList = () => {
@@ -20,7 +20,7 @@ export const criminalList = () => {
         }
 
         // That empty string, now filled with information is declared, and placed into the target.
-        criminalContainer.innerHTML = `
+        document.querySelector("#the-box").innerHTML = `
         <h2>Criminals</h2>
         <div class="flex-container">${criminalStringContainer}</div>`
 
