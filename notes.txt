@@ -1,0 +1,47 @@
+BUTTON AND EVENT LISTENER
+
+1. See the button show up for each criminal
+
+<button id="associates--${criminal.id}">Known Associates</button>
+
+
+2. Figure out what "criminal.id" is on the button-- maybe ask some questions there
+
+3. Look at criminal objects in the console or in Postman or in the browser to see how to get to the known_associates property
+
+4. What differentiates each object?
+
+5. Make an associates folder in scripts
+    - AssociateList component
+    - Event Listener in AssociateList component
+
+6. Write an event listener to listen for a button click-- it should console log that we clicked a button but it shouldn't do anythign else at this point
+    - The event listener should be on the body or main element because we build the buttons with JS
+
+THE TRICKY PART
+
+7. When you click a single criminal's known associate's button, try to get THAT criminal's object in the console
+    - Maybe there's some way we can filter these criminals using a .filter() to find the specific criminal
+    - If not, that's a great time to ask a question
+
+8. Once we get that single criminal back, console.log the known associates array for the criminal you clicked on
+
+
+
+
+THE NOT SO TRICKY PART
+
+
+9. Once you can get the known associates in the console, we know we have access to them and we can work on printing them in a loop in AssociatesList.js
+
+10. Decide where we want to print our associates and add a container to our HTML file
+
+11. Build an HTML representation in AssociateList that will print each associate's name and alibi, and target the DOM container we made in step 10
+
+
+
+
+
+
+
+

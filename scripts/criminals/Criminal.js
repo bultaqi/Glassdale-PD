@@ -6,6 +6,7 @@ export function individualCriminal(criminalObject) {
             <p>${criminalObject.conviction}</p>
             <p>${new Date(criminalObject.incarceration.start).toLocaleDateString('en-US')}</p>
             <p>${new Date(criminalObject.incarceration.end).toLocaleDateString('en-US')}</p>
+            <button id="associates--${criminalObject.id}">Known Associates</button>
         </section>
 `
 }

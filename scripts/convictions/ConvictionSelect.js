@@ -23,9 +23,9 @@ const render = convictionsCollection => {
         </select>`;
 };
 
-const eventHub = document.querySelector('main')
+const eventHub = document.querySelector('main');
 eventHub.addEventListener("change", (eventObject) => {
-    console.log("This is target.id", eventObject.target.id)
+    // console.log("This is target.id", eventObject.target.id)
     getCriminals().then(() => {
         const criminals = useCriminals()
         let buildHTML =  ""
