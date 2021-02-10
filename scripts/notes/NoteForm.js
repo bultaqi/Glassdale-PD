@@ -8,7 +8,6 @@ const contentTarget = document.querySelector(".noteFormContainer")
 
 export const NoteForm = () => {
     contentTarget.innerHTML = `
-    
             <input type="text" id="note-text">
             <input type="date" id="date-field">
             <input type="text" id="suspect-text">  
@@ -16,29 +15,16 @@ export const NoteForm = () => {
         `
 }
 
-// Handle browser-generated click event in component
-const eventHub = document.querySelector('.noteFormContainer')
-eventHub.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id === "saveNote") {
 
-        // Make a new object representation of a note
-        let noteText = document.querySelector('#note-text')
-        console.log(noteText)
-        let dateOfNote = document.querySelector('#date-field')
-        console.log(dateOfNote)
-        let suspect = document.querySelector('#suspect-text')
-        console.log(suspect)
+export function NoteList(){
+    getNotes()
+    .then(() => {
+        const allTheNotes = useNotes()
 
-        const newNote = {
-            // Key/value pairs here
-            noteText: noteText.value,
-            dateOfNote: dateOfNote.value,
-            suspect: suspect.value,
-        }
+        // This is an element we added!
+        const contentTarget = document.querySelector(".noteListContainer")
 
-        console.log(newNote)
-        // Change API state and application state
-        saveNote(newNote)
-        .then(NoteList) // Refresh your list of notes once you've saved your new one
-    }
-})
+        // This does the same thing as printing with a for loop! We just use a .map() to loop over our collection and call the Note function instead of a for loop
+        contentTarget.innerHTML = allTheNotes.map(singleNote => Note(singleNote))
+    })
+}
