@@ -1,22 +1,16 @@
 {
   "notes": [
     {
-      "noteText": "aa",
-      "dateOfNote": "2021-02-11",
-      "suspect": "aa",
-      "id": 1502
+      "text": "it was the sheep-BAHHHH",
+      "date": "2021-02-11",
+      "criminalId": "11",
+      "id": 1
     },
     {
-      "noteText": "hello",
-      "dateOfNote": "2021-02-10",
-      "suspect": "hey",
-      "id": 1503
-    },
-    {
-      "noteText": "Hello!",
-      "dateOfNote": "2021-02-17",
-      "suspect": "young man",
-      "id": 1504
+      "text": "Covid19 Started by 5G",
+      "date": "2021-02-24",
+      "criminalId": "5",
+      "id": 2
     }
   ]
 }
