@@ -6,5 +6,6 @@ export function Note (singleNote, relatedCriminal) {
             <h2>Note about ${relatedCriminal.name}</h2>
             <p>${singleNote.text}</p>
         </section>
+        <button id="delete-note--${singleNote.id}">Delete</button>
     `
 }

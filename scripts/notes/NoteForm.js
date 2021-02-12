@@ -44,10 +44,6 @@ contentTarget.addEventListener("click", clickEvent => {
             criminalId: document.querySelector("#noteForm--Criminal").value
                         // Key/value pairs here
         }
-        console.log(newNote)
-    
-    
-        
 
         // Change API state and application state
         saveNote(newNote)
