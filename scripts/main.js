@@ -3,11 +3,14 @@ import { criminalList } from './criminals/CriminalList.js'
 import { facilitiesList } from './facilities/FacilityList.js'
 import { ConvictionSelect } from './convictions/ConvictionSelect.js'
 ConvictionSelect()
-import { NoteForm } from './notes/NoteForm.js'
+
+import {NoteList} from './notes/NoteList.js'
+NoteList()
+
+import {NoteForm} from './notes/NoteForm.js'
 NoteForm()
 
-
-import { } from './associates/AssociateList.js'
+import {} from './associates/AssociateList.js'
 
 
 

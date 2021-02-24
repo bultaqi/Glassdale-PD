@@ -1,22 +1,3 @@
 {
-  "notes": [
-    {
-      "noteText": "aa",
-      "dateOfNote": "2021-02-11",
-      "suspect": "aa",
-      "id": 1502
-    },
-    {
-      "noteText": "hello",
-      "dateOfNote": "2021-02-10",
-      "suspect": "hey",
-      "id": 1503
-    },
-    {
-      "noteText": "Hello!",
-      "dateOfNote": "2021-02-17",
-      "suspect": "young man",
-      "id": 1504
-    }
-  ]
+  "notes": []
 }
