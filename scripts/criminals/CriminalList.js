@@ -1,30 +1,44 @@
-// Importing exported functions from other js files.
+import { getCriminalFacilities, useCriminalFacilities } from '../facilities/criminalFacilityProvider.js';
+import { getFacilities, useFacilities } from '../facilities/FacilityProvider.js';
 import { individualCriminal } from './Criminal.js';
 import { getCriminals, useCriminals } from './CriminalProvider.js'
 
-// Creating a storage container to catch the function results and targert my html.
-// let criminalContainer = document.querySelector('#the-box')
 
-// This function is taking the imported data and processing it for the final product to be placed in the html.
 export const criminalList = () => {
-    // The function is invoked to fetch the API and told to "then" store that data.
-    getCriminals().then(() => {
-        // A copy of the data is invoked and caught in a variable.
-        let criminals = useCriminals();
-        // A variable is assigned to an empty string, so it can act as container for what we produce.
-        let criminalStringContainer = ''
+    getCriminals()
+    getFacilities()
+        .then(getCriminalFacilities)
+        .then(
+            () => {
         
-        // The loop, loops through each of the objects in the array (otherwise known as the data we fetced & caught).
-        for (const criminal of criminals) {
-            criminalStringContainer += individualCriminal(criminal)
-        }
-
-        // That empty string, now filled with information is declared, and placed into the target.
-        document.querySelector("#the-box").innerHTML = `
-        <h2>Criminals</h2>
-        <div class="flex-container">${criminalStringContainer}</div>`
-
+        const facilities = useFacilities()
+        const criminals = useCriminals()
+        const crimFac = useCriminalFacilities()
+        
+        render(criminals, facilities, crimFac) 
     })
+}
+
+let contentTarget = document.querySelector("#the-box")
+
+const render = (criminalsToRender, allFacilities, allRelationships) => {
+    // Step 1 - Iterate all criminals
+    contentTarget.innerHTML = criminalsToRender.map(
+        (criminalObject) => {
+            // Step 2 - Filter all relationships to get only ones for this criminal
+            const facilityRelationshipsForThisCriminal = allRelationships.filter(cf => cf.criminalId === criminalObject.id)
+
+            
+            // Step 3 - Convert the relationships to facilities with map()
+            const facilities = facilityRelationshipsForThisCriminal.map(cf => {
+                const matchingFacilityObject = allFacilities.find(facility => facility.id === cf.facilityId)
+                return matchingFacilityObject
+            })
+
+            // Must pass the matching facilities to the Criminal component
+            return individualCriminal(criminalObject, facilities)
+        }
+    ).join("")
 }
 
 document.querySelector("#criminals-nav-link").addEventListener("click", () => {
